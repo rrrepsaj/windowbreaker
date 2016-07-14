@@ -44,6 +44,181 @@
 /* 0 */
 /***/ function(module, exports) {
 
+	const canvas = document.getElementById("canvas");
+	const context = canvas.getContext("2d");
+	
+	let score = 0;
+	let lives = 3;
+	
+	let ballX = canvas.width / 2;
+	let ballY = canvas.height - 50;
+	let ballRadius = 15;
+	
+	let dX = 2;
+	let dY = -2;
+	
+	function drawBall() {
+	  context.beginPath();
+	  context.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+	  context.fillStyle = "#fdfdfd";
+	  context.fill();
+	  context.closePath();
+	}
+	
+	let batWidth = 150;
+	let batHeight = 15;
+	
+	let batX = (canvas.width - batWidth) / 2;
+	
+	function drawBat() {
+	  context.beginPath();
+	  context.rect(batX, canvas.height - batHeight, batWidth, batHeight);
+	  context.fillStyle = "#b66a24";
+	  context.fill();
+	  context.closePath();
+	}
+	
+	let windowRowCount = 3;
+	let windowColumnCount = 9;
+	let windowWidth = 50;
+	let windowHeight = 65;
+	let windowPaddingLeftRight = 30;
+	let windowPaddingTopBottom = 15;
+	let windowOffsetTop = 50;
+	let windowOffsetLeft = 105;
+	
+	let windows = [];
+	for(let col = 0; col < windowColumnCount; col++) {
+	    windows[col] = [];
+	    for(let row = 0; row < windowRowCount; row++) {
+	      windows[col][row] = { x: 0, y: 0, status: 1 };
+	    }
+	}
+	
+	function drawWindows() {
+	  for(let col = 0; col < windowColumnCount; col++) {
+	    for(let row = 0; row < windowRowCount; row++) {
+	      if (windows[col][row].status === 1){
+	        let windowX = (col * (windowWidth + windowPaddingLeftRight)) + windowOffsetLeft;
+	        let windowY = (row * (windowHeight + windowPaddingTopBottom)) + windowOffsetTop;
+	        windows[col][row].x = windowX;
+	        windows[col][row].y = windowY;
+	        context.beginPath();
+	        context.rect(windowX, windowY, windowWidth, windowHeight);
+	        // context.fillStyle = "rgba(#68c7f5, 0.66)";
+	        context.fillStyle = "#b5e1f6";
+	        context.fill();
+	        context.closePath();
+	      }
+	    }
+	  }
+	}
+	
+	
+	
+	let keyRight = false;
+	let keyLeft = false;
+	
+	function render() {
+	  context.clearRect(0, 0, canvas.width, canvas.height);
+	  drawWindows();
+	  drawBall();
+	  drawBat();
+	  drawScore();
+	  drawLives();
+	  collisionDetection();
+	
+	  if(ballX + dX > canvas.width-ballRadius || ballX + dX < ballRadius) {
+	    dX = -dX;
+	  }
+	  if(ballY + dY < ballRadius) {
+	    dY = -dY;
+	  } else if (ballY + dY > canvas.height - ballRadius - batHeight) {
+	    if (ballX > batX && ballX < batX + batWidth) {
+	      dY = -dY;
+	    } else {
+	      lives--;
+	      if(!lives) {
+	        alert("Game Over, breh");
+	        document.location.reload();
+	      }
+	      else {
+	        ballX = canvas.width / 2;
+	        ballY = canvas.height - 30;
+	        dX = 2;
+	        dY = -2;
+	        batX = (canvas.width - batWidth) / 2;
+	      }
+	    }
+	  }
+	
+	  ballX += dX;
+	  ballY += dY;
+	
+	  if (keyRight && batX < canvas.width - batWidth) {
+	    batX += 8;
+	  } else if (keyLeft && batX > 0) {
+	    batX -= 8;
+	  }
+	}
+	
+	document.addEventListener("keydown", handleKeyDown, false);
+	document.addEventListener("keyup", handleKeyUp, false);
+	document.addEventListener("mousemove", handleMouseMove, false);
+	
+	function handleKeyDown(e) {
+	  if (e.keyCode === 39) {
+	    keyRight = true;
+	  } else if (e.keyCode === 37) {
+	    keyLeft = true;
+	  }
+	}
+	
+	function handleKeyUp(e) {
+	  if (e.keyCode === 39) {
+	    keyRight = false;
+	  } else if (e.keyCode === 37) {
+	    keyLeft = false;
+	  }
+	}
+	
+	function handleMouseMove(e) {
+	  let relX = e.clientX - canvas.offsetLeft;
+	  if (relX > 0 && relX < canvas.width) {
+	    batX = relX - (batWidth / 2);
+	  }
+	}
+	
+	function collisionDetection() {
+	  for(let col = 0; col < windowColumnCount; col++) {
+	    for(let row = 0; row < windowRowCount; row++) {
+	      let w = windows[col][row];
+	      if (w.status === 1) {
+	        if(ballX > w.x && ballX < w.x + windowWidth && ballY > w.y && ballY < w.y + windowHeight) {
+	          dY = -dY;
+	          w.status = 0;
+	          score++;
+	          if (score === windowRowCount * windowColumnCount) {
+	            alert("You win!");
+	            document.location.reload();
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
+	
+	function drawScore() {
+	  context.fillStyle = "#666";
+	  context.fillText("Score: " + score, 20, 30);
+	}
+	
+	function drawLives() {
+	  context.fillStyle = "#666";
+	  context.fillText("Lives: " + lives, canvas.width - 70, 30);
+	}
+	
+	setInterval(render, 10);
 
 
 /***/ }
