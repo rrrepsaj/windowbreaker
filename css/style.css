@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+#title {
+  font-weight: 700;
+  font-size: 75px;
+}
+
 canvas {
   background-color: beige;
   color: #666;

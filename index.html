@@ -5,10 +5,30 @@
     <title>Window Breaker</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Window Breaker</h1><br />
+    <h1 id="title">Window Breaker</h1><br />
     <canvas id="canvas" width=900 height=600></canvas>
+
+    <audio id="glassShattering" src="./assets/sounds/glass.mp3"></audio>
+
+    <br />
+    <p id="intro">
+      Inspired by the classic BrickBreaker game.
+    </p>
+    <p id="instructions">
+      <strong>Left</strong> and <strong>Right</strong> <em>arrow keys</em> to move, or use your <strong>mouse</strong>!
+    </p>
+
     <script type="application/javascript" src="js/bundle.js"></script>
   </body>
 </html>
