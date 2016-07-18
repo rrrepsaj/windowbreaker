@@ -102,6 +102,7 @@ let keyRight = false;
 let keyLeft = false;
 
 function render() {
+  swal({   title: "Sweet!",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
   context.clearRect(0, 0, canvas.width, canvas.height);
   drawHouse();
   drawWindows();
