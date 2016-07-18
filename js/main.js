@@ -1,6 +1,20 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
+// sweetalert({   title: "Sweet!",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
+sweetalert({
+  title: "WindowBreaker",
+  text: "Use arrow keys or mouse to position your bat. Good luck!",
+  // type: "warning",
+  imageUrl: "../assets/images/shatter.png",
+  // showCancelButton: false,
+  confirmButtonColor: "#b5e1f6",
+  confirmButtonText: "Start",
+  cancelButtonText: "Cancel",
+  closeOnConfirm: true,
+  closeOnCancel: true
+});
+
 let score = 0;
 let lives = 3;
 
@@ -102,7 +116,7 @@ let keyRight = false;
 let keyLeft = false;
 
 function render() {
-  swal({   title: "Sweet!",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
+
   context.clearRect(0, 0, canvas.width, canvas.height);
   drawHouse();
   drawWindows();
