@@ -122,8 +122,10 @@
 	    }
 	
 	    // Windows
-	    let windowRowCount = 3;
-	    let windowColumnCount = 9;
+	    // let windowRowCount = 3;
+	    // let windowColumnCount = 9;
+	    let windowRowCount = 1;
+	    let windowColumnCount = 1;
 	    let windowWidth = 50;
 	    let windowHeight = 65;
 	    let windowPaddingLeftRight = 30;
@@ -187,7 +189,7 @@
 	        } else {
 	          lives--;
 	          if(!lives) {
-	            alert("Game Over, breh");
+	            // alert("Game Over, breh");
 	            document.location.reload();
 	          }
 	          else {
@@ -250,7 +252,7 @@
 	              flashFrames = 5;
 	              if (score === totalWindows) {
 	                // change background to animate red/blue flash
-	                
+	
 	                sweetalert({ title: "You successfully smashed all the windows! ...But they've called the cops on you. Run!",
 	                text: "Here's a custom image.",
 	                imageUrl: "../assets/images/shatter.png",
