@@ -53,7 +53,7 @@
 	  title: "WindowBreaker",
 	  text: "Use arrow keys or mouse to position your bat. Good luck!",
 	  // type: "warning",
-	  imageUrl: "../assets/images/shatter.png",
+	  // imageUrl: "../assets/images/shatter.png",
 	  // showCancelButton: false,
 	  confirmButtonColor: "#b5e1f6",
 	  confirmButtonText: "Start",
@@ -253,8 +253,8 @@
 	              if (score === totalWindows) {
 	                // change background to animate red/blue flash
 	
-	                sweetalert({ title: "You successfully smashed all the windows! ...But they've called the cops on you. Run!",
-	                text: "Here's a custom image.",
+	                sweetalert({ title: "You successfully smashed all the windows!",
+	                text: "... But the cops have been alerted. RUN!",
 	                imageUrl: "../assets/images/shatter.png",
 	                showCancelButton: true,
 	                confirmButtonColor: "#b5e1f6",
