@@ -1,0 +1,25 @@
+{
+  "name": "windowbreaker",
+  "version": "1.0.0",
+  "description": "[WindowBreaker Live](https://rrrepsaj.github.io/windowbreaker/)",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "sweetalert": "file:sweetalert"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrrepsaj/windowbreaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrrepsaj/windowbreaker/issues"
+  },
+  "homepage": "https://github.com/rrrepsaj/windowbreaker#readme"
+}
