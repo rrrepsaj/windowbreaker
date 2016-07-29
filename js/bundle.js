@@ -67,11 +67,48 @@
 	    let lives = 3;
 	
 	    // Glass sound fx
-	    let glassShattering = document.getElementById("glassShattering");
-	    console.log(glassShattering);
+	    const shatteringSounds = [
+	      "glassShattering1",
+	      "glassShattering2",
+	      "splash1",
+	      "splash2",
+	      "splash3",
+	      "splash4",
+	      "splash5",
+	      "splash6",
+	      "splash7",
+	      "splash8",
+	      "splash9",
+	      "splash10",
+	      "splash11",
+	      "splash12",
+	      "splash13",
+	      "splash14",
+	      "splash15",
+	      "splash16",
+	      "splash17",
+	      "splat1",
+	      "splat5",
+	      "splat6",
+	      "splat7",
+	      "splat8",
+	      "splat9",
+	      "splat10",
+	      "splat11",
+	      "splat12",
+	      "splat13",
+	      "splat14",
+	      "splat15",
+	      "splat16"
+	    ];
 	
-	    function soundGlass() {
-	      glassShattering.play();
+	    // randShatter = shatteringSounds[Math.floor(Math.random() * shatteringSounds.length)];
+	    //
+	    // let glassShattering = document.getElementById(randShatter);
+	    // console.log(glassShattering);
+	
+	    function soundGlass(sound) {
+	      sound.play();
 	    }
 	
 	    // Baseball
@@ -122,10 +159,10 @@
 	    }
 	
 	    // Windows
-	    // let windowRowCount = 3;
-	    // let windowColumnCount = 9;
-	    let windowRowCount = 1;
-	    let windowColumnCount = 1;
+	    let windowRowCount = 3;
+	    let windowColumnCount = 9;
+	    // let windowRowCount = 1;
+	    // let windowColumnCount = 1;
 	    let windowWidth = 50;
 	    let windowHeight = 65;
 	    let windowPaddingLeftRight = 30;
@@ -245,17 +282,27 @@
 	          let w = windows[col][row];
 	          if (w.status === 1) {
 	            if(ballX > w.x && ballX < (w.x + windowWidth) && ballY > w.y && ballY < (w.y + windowHeight)) {
+	
+	              randShatter = shatteringSounds[Math.floor(Math.random() * shatteringSounds.length)];
+	              let glassShattering = document.getElementById(randShatter);
+	              console.log(glassShattering);
+	
 	              dY = -dY;
 	              w.status = 0;
 	              score++;
-	              soundGlass();
+	              soundGlass(glassShattering);
 	              flashFrames = 5;
 	              if (score === totalWindows) {
 	                // change background to animate red/blue flash
+	                console.log("score === totalWindows, breh");
+	                context.clearRect(0, 0, canvas.width, canvas.height);
+	                clearInterval(getInterval);
+	
+	                soundGlass(document.getElementById("police-siren"));
 	
 	                sweetalert({ title: "You successfully smashed all the windows!",
 	                text: "... But the cops have been alerted. RUN!",
-	                imageUrl: "../assets/images/shatter.png",
+	                imageUrl: "https://res.cloudinary.com/deqbn35yx/image/upload/v1469740292/shatter_dkloue.png",
 	                showCancelButton: true,
 	                confirmButtonColor: "#b5e1f6",
 	                confirmButtonText: "Start",
@@ -276,6 +323,7 @@
 	    }
 	
 	    let bgRed = 204;
+	    // color = "#ccf2b4";
 	    let bgColor = `rgba(${bgRed}, 242, 180, 1)`;
 	    canvas.style.backgroundColor = bgColor;
 	    let colorSliderdx = 10;
@@ -311,7 +359,8 @@
 	      context.fillText("Lives: " + lives, canvas.width - 100, canvas.height - 30);
 	    }
 	
-	    setInterval(render, 10);
+	    let getInterval = setInterval(render, 10);
+	    // getInterval();
 	  }
 	});
 

@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
 
     <script src="sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
 
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,27 +31,50 @@
     </script>
   </head>
   <body>
+
     <h1 id="title">Window Breaker</h1><br />
     <canvas id="canvas" width=900 height=600></canvas>
+    <br />
 
     <!-- Sounds -->
 
-    <audio id="glassShattering0" src="./assets/sounds/glass_shattering_0.wav"></audio>
+    <audio id="police-siren" src="./assets/sounds/police_siren.wav"></audio>
+
     <audio id="glassShattering1" src="./assets/sounds/glass_shattering_1.wav"></audio>
     <audio id="glassShattering2" src="./assets/sounds/glass_shattering_2.wav"></audio>
-    <audio id="glassShattering3" src="./assets/sounds/glass_shattering_3.wav"></audio>
-    <audio id="glassShattering4" src="./assets/sounds/glass_shattering_4.wav"></audio>
-    <audio id="glassShattering5" src="./assets/sounds/glass_shattering_5.wav"></audio>
-    <audio id="glassShattering6" src="./assets/sounds/glass_shattering_6.wav"></audio>
-    <audio id="glassShattering7" src="./assets/sounds/glass_shattering_7.wav"></audio>
-    <audio id="glassShattering8" src="./assets/sounds/glass_shattering_8.wav"></audio>
-    <audio id="glassShattering9" src="./assets/sounds/glass_shattering_9.wav"></audio>
-    <audio id="glassShattering10" src="./assets/sounds/glass_shattering_10.wav"></audio>
-    <audio id="glassShattering11" src="./assets/sounds/glass_shattering_11.wav"></audio>
-    <audio id="glassShattering12" src="./assets/sounds/glass_shattering_12.wav"></audio>
-    <audio id="glassShattering13" src="./assets/sounds/glass_shattering_13.wav"></audio>
+    <audio id="splash1" src="./assets/sounds/splash1.wav"></audio>
+    <audio id="splash2" src="./assets/sounds/splash2.wav"></audio>
+    <audio id="splash3" src="./assets/sounds/splash3.wav"></audio>
+    <audio id="splash4" src="./assets/sounds/splash4.wav"></audio>
+    <audio id="splash5" src="./assets/sounds/splash5.wav"></audio>
+    <audio id="splash6" src="./assets/sounds/splash6.wav"></audio>
+    <audio id="splash7" src="./assets/sounds/splash7.wav"></audio>
+    <audio id="splash8" src="./assets/sounds/splash8.wav"></audio>
+    <audio id="splash9" src="./assets/sounds/splash9.wav"></audio>
+    <audio id="splash10" src="./assets/sounds/splash10.wav"></audio>
+    <audio id="splash11" src="./assets/sounds/splash11.wav"></audio>
+    <audio id="splash12" src="./assets/sounds/splash12.wav"></audio>
+    <audio id="splash13" src="./assets/sounds/splash13.wav"></audio>
+    <audio id="splash14" src="./assets/sounds/splash14.wav"></audio>
+    <audio id="splash15" src="./assets/sounds/splash15.wav"></audio>
+    <audio id="splash16" src="./assets/sounds/splash16.wav"></audio>
+    <audio id="splash17" src="./assets/sounds/splash17.wav"></audio>
+    <audio id="splat1" src="./assets/sounds/splat1.wav"></audio>
+    <audio id="splat5" src="./assets/sounds/splat5.wav"></audio>
+    <audio id="splat6" src="./assets/sounds/splat6.wav"></audio>
+    <audio id="splat7" src="./assets/sounds/splat7.wav"></audio>
+    <audio id="splat8" src="./assets/sounds/splat8.wav"></audio>
+    <audio id="splat9" src="./assets/sounds/splat9.wav"></audio>
+    <audio id="splat10" src="./assets/sounds/splat10.wav"></audio>
+    <audio id="splat11" src="./assets/sounds/splat11.wav"></audio>
+    <audio id="splat12" src="./assets/sounds/splat12.wav"></audio>
+    <audio id="splat13" src="./assets/sounds/splat13.wav"></audio>
+    <audio id="splat14" src="./assets/sounds/splat14.wav"></audio>
+    <audio id="splat15" src="./assets/sounds/splat15.wav"></audio>
+    <audio id="splat16" src="./assets/sounds/splat16.wav"></audio>
 
-    <br />
+    <!-- Main  -->
+
     <p id="intro">
       Inspired by the classic BrickBreaker game.
     </p>
