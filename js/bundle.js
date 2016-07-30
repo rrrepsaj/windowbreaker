@@ -302,10 +302,11 @@
 	
 	                sweetalert({ title: "You successfully smashed all the windows!",
 	                text: "... But the cops have been alerted. RUN!",
+	                type: "warning",
 	                imageUrl: "https://res.cloudinary.com/deqbn35yx/image/upload/v1469740292/shatter_dkloue.png",
-	                showCancelButton: true,
+	                showCancelButton: false,
 	                confirmButtonColor: "#b5e1f6",
-	                confirmButtonText: "Start",
+	                confirmButtonText: "OK",
 	                cancelButtonText: "Cancel",
 	                closeOnConfirm: true,
 	                closeOnCancel: true
